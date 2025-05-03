@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+<action>
+	<icon>terminal</icon>
+	<name>terminal current dir</name>
+	<submenu></submenu>
+	<unique-id>1746033582486427-1</unique-id>
+	<command>kitty --working-directory %f</command>
+	<description>Open terminal</description>
+	<range></range>
+	<patterns>*</patterns>
+	<startup-notify/>
+	<directories/>
+</action>
+</actions>
