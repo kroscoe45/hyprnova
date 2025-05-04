@@ -1,0 +1,130 @@
+# HyprNova Theme Development Handoff Document
+
+## Project Overview
+
+HyprNova is a comprehensive Arch Linux theme and configuration set focusing on the Hyprland compositor within a Wayland desktop environment. The project aims to create a visually cohesive, highly functional, dark themed,well-documented desktop experience.
+
+## Repository Structure
+
+The project is organized in a git repository at `~/Code/my-repos/hyprnova/` with the following structure:
+
+- `hypr/` - Hyprland window manager configuration
+- `waybar/` - Status bar configuration
+- `dunst/` - Notification daemon configuration
+- `kitty/` - Terminal configuration
+- `rofi/` - Application launcher configuration
+- `gtk-3.0/` - GTK theming
+- `qt5ct/` - Qt5 theming
+- `qt6ct/` - Qt6 theming
+- `nvim/` - Neovim configuration
+- `god.snap.sh` - Installation script
+- `scripts/` - Collection of scripts used to aid development
+
+## Current Progress on Rudimentary Build (v0)
+
+### 1. Hyprland Configuration (Completed)
+- Enhanced userprefs.conf with comprehensive configuration
+- Implemented settings for input handling, animations, window decoration
+- Added specialized window rules for application-specific behaviors
+- Configured GPU optimizations for AMD hardware
+
+### 2. Installation System (Completed)
+- Created comprehensive installation script (god.snap.sh)
+- Implemented system checks, package installation, and configuration linking
+- Added backup functionality and GPU-specific optimizations
+- Integrated Neovim configuration management
+
+### 3. Pending Components
+- Keybindings configuration
+- Waybar customization
+- Notification system configuration
+- Visual theming across applications
+- Workflow-specific configurations
+
+## Component Details
+
+### Hyprland Configuration
+The core of the desktop experience uses a modular configuration approach:
+1. `hyprland.conf` - Main entry point that sources other configuration files
+2. `userprefs.conf` - User-specific preferences and overrides
+3. Additional configuration files for keybindings, window rules, etc.
+
+### Installation Script
+The `god.snap.sh` script provides an automated installation process that:
+1. Verifies system compatibility
+2. Installs required packages
+3. Creates symlinks from the repository to appropriate system locations
+4. Applies hardware-specific optimizations
+5. Sets up appropriate permissions and autostart entries
+
+## Preferences and Standards
+
+### Documentation Standard
+- All configuration files should follow this documentation pattern:
+ - Section headers identify configuration sections
+ - Property descriptions appear at the root level above their parent objects
+ - No comments appear inside braces (keeps configuration sections clean)
+ - Property descriptions include:
+   - Name of the property
+   - Description of what it controls
+   - Data type expected (string, int, float, bool, etc.)
+   - Range of valid values where applicable
+   - Special values or options when relevant
+   - Examples when helpful
+
+### Code Modification Standard
+- When making changes to configuration files:
+ - Create an artifact for the file if one doesn't exist
+ - Document changes in the chat, not in file comments
+ - Don't add comments in updated config artifacts that reference iterative improvements
+ - Group non-reliant changes together for efficient review
+
+### Explanation Standard
+- When suggesting changes:
+ - Explain what the change does
+ - Explain how it is applied by the responsible package
+ - Provide context for why the change is beneficial
+ - Group similar changes for explanation (e.g., window rules with similar purposes)
+- Be detailed and technical, assuming I have solid Linux fundamentals
+- Provide complete explanations with context
+- Use concrete examples rather than generic advice
+- Verify commands before suggesting them
+- Ask for specific information when needed
+- Break down complex topics into manageable sections
+
+## Next Steps
+0. **Set Theme Colors**
+  - Add config toggle between dark mode and wallpaper adaptive colors
+  - Create color scheme matching Shadcn Zinc palette
+
+1. **Keybindings Configuration**
+  - Review and enhance keyboard shortcuts
+  - Create task-specific shortcut groups
+
+2. **Waybar Integration**
+  - Customize status bar modules
+  - Ensure visual consistency with Hyprland theme
+
+3. **Notification System Configuration**
+  - Configure and differentiate Dunst and Mako
+  - Create notification rules for different application types
+
+4. **Visual Theming**
+  - Implement consistent theme across Qt and GTK applications
+  - Configure dynamic color schemes
+
+5. **Workflow Optimization**
+  - Define task-specific workspaces and configurations
+  - Create automation for common tasks
+
+## System Components Overview
+## These are just what is currently installed, you are permitted to recommend alternatives or additions. Do not use an alternative until you have received authorization from me.
+
+- **Window Manager**: Hyprland
+- **Status Bar**: Waybar
+- **Notification Systems**: Dunst
+- **Terminal Emulators**: Kitty
+- **File Managers**: Thunar 
+- **Shell Environment**: ZSH with Oh-My-Zsh and Starship prompt
+- **Editor**: Neovim with Lazy for plugin management
+- **Theming Tools**: qt5ct, qt6ct, Kvantum, pywal

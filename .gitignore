@@ -1,0 +1,25 @@
+# Ignore binary and media files
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.mp4
+*.webm
+*.o
+*.so
+*.bin
+*.pyc
+*.class
+
+# Ignore cache directories
+**/cache/
+**/__pycache__/
+**/node_modules/
+
+# Exceptions - keep small icons
+!**/icons/**/*.png
+!**/icons/**/*.svg
+
+# Ignore log files
+*.log
+*.tmp
